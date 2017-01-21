@@ -6,10 +6,12 @@ import App from './js/component/App.jsx';
 
 const ren = render(
   <AppContainer>
-    <App />
+    <Router history={browserHistory}>
+      <Route path="/" component={App} />
+    </Router>
   </AppContainer>, document.getElementById('app')
 );
 
 if (module.hot) {
-  module.hot.accept('./js/component/App', ren);
+  module.hot.accept('./js/component/App.jsx', ren);
 }
