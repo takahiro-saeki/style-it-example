@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
+import Header from '../component/Header';
 
 const App = () => (
-  <div>App</div>
+  <div>
+    <Header />
+  </div>
 )
 
 export default App;
