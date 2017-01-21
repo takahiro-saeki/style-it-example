@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
@@ -11,7 +12,10 @@ module.exports = {
   output: {
     filename: 'app.bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/'
+    publicPath: './'
+  },
+  resolve: {
+    extensions: ['.js', '.jsx']
   },
   context: path.resolve(__dirname, 'src'),
   performance: {
@@ -26,25 +30,20 @@ module.exports = {
     open: true
   },
   module: {
-    loaders: [
-      { test: /(\.jsx|\.js)$/,
-        loaders: [
-          'babel-loader',
-        ],
-        exclude: /node_modules/
-      },
+    rules: [
       {
-        test: /\.css$/,
-        loaders: [
-          'style-loader',
-          'css-loader?modules',
-          'postcss-loader',
-        ],
-      },
-    ],
+        test: /(\.jsx|\.js)$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      }
+    ]
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Style-it example',
+      template: path.join(__dirname, './src/index.ejs')
+    }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),
-  ],
+    new webpack.NamedModulesPlugin()
+  ]
 }
