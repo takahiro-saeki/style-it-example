@@ -41,7 +41,12 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Style-it example',
-      template: path.join(__dirname, './src/index.ejs')
+      template: path.join(__dirname, './src/ejs/index.ejs')
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Style-it example',
+      template: path.join(__dirname, './src/ejs/404.ejs'),
+      filename: '404.html'
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin()
