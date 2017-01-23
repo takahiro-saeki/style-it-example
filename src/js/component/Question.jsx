@@ -8,15 +8,13 @@ export default class Question extends Component {
     super(props);
   }
 
+  result() {
+    sample.test = 'test'
+  }
+
   render() {
     return (
-      <section>
-        <Base />
-        <div key={uuid.v4()}>{this.props.ques.title}</div>
-        <ul>
-          <li key={uuid.v4()}>{this.props.ques.answer}</li>
-        </ul>
-      </section>
+
     )
   }
 }
