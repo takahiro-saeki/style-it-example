@@ -7,7 +7,7 @@ twiter
 [@Sh_McK](https://twitter.com/Sh_McK)
 
 ##example page
-Coming soon, probably.
+[here](https://takahiro-saeki.github.io/style-it-example/dist/)
 
 ##USAGE
 install
