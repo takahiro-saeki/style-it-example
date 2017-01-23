@@ -3,14 +3,10 @@ import { render } from 'react-dom';
 import { Router, Route, Link, browserHistory } from 'react-router';
 import { AppContainer } from 'react-hot-loader';
 import App from './js/container/App';
-import Quiz from './js/container/Quiz';
 
 const ren = render(
   <AppContainer>
-    <Router history={browserHistory}>
-      <Route path="/" component={App} />
-      <Route path="/quiz" component={Quiz} />
-    </Router>
+    <App />
   </AppContainer>, document.getElementById('app')
 );
 
